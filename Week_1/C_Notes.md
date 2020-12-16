@@ -34,5 +34,25 @@ printf( "hello, world\n" );
 
 * get_string to ask for user input 
 ```c
-get_string("What's your name?\n");
+string answer = get_string("What's your name?\n");
+
+printf("Hello, %s\n", answer);
 ```
+  * Set variable to store the answer from the user, also need to set the type of data the variable will store
+  * %s is a placeholder to denote that a variable will be put here of type string
+    * Use comma variable name to tell C what variable to plug in there
+    * Can add as many placeholders/variables as you want in order
+
+Full program:
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void) {
+  string answer = get_string("What's your name?\n");
+  printf("hello, %s\n", answer);
+}
+```
+  * Need to include cs50 file so the computer knows what string is. This is not native to C
+  * When running compile need to include -lcs50 (clang -o string string.c -lcs50) to ensure it combines the code from both files into one machine code file
+    * Easier method is to say "make string" which automatically generates the command line arguments needed to run the program (only use the file name, not the .c)
